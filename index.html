@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random quotes</title>
+    <style>
+        body{
+    background-color: rgb(127, 212, 255);
+}
+
+.content{
+    background-color: rgb(43, 128, 226);
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 15%;
+    width: 600px;
+    height: 300px;
+}
+
+.content button{
+    padding: 15px 15px 15px 15px;
+    border-radius: 10px;
+    border-color: rgb(156, 58, 205);
+}
+
+#btn
+{
+    margin: 20px 20px 20px 20px;
+}
+
+.show_content
+{
+    background-color: rgb(217, 226, 43);
+    width: 400px;
+    /* height: 150px; */
+    margin-left: 15%;
+    font-style: italic;
+    font-size: 30px;
+    border-radius: 15px;
+}
+
+#quote
+{
+    text-align: center;
+    margin:0px 20px 0px 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="content">
+        <button id="btn"><b>Generate a Quote Randomly</b></button>
+       
+       <div class="show_content">
+        <p id='quote' style="font-weight: bold;"></p>
+        </div>
+    </div>
+<script>
+    let btn = document.getElementById('btn');
+
+let arr = [`"Make the most of yourself....for that is all there is of you." -Ralph Waldo Emerson`
+,`"The question is not how to get cured, but how to live" -Joseph Conrad`
+,`"It was like the beginning of life and laughter. It was the real meaning of the sun" -Charles Bukowski, Factotum`
+,`"I never saw a wild thing sorry for itself" -D.H. Lawrence`]
+
+btn.addEventListener('click',onclick=()=>
+    {
+         let rand_quote = Math.floor(Math.random()*arr.length)
+         document.getElementById("quote").innerHTML = arr[rand_quote];  
+    })
+</script>
+</body>
+</html>
